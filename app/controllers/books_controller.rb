@@ -53,7 +53,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
       format.json { head :no_content }
-    end
+    end,
   end
 
   private
@@ -64,6 +64,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :number_of_pages, :image)
+      params.require(:book).permit(:title, :number_of_pages, :image, :details)
     end
 end
